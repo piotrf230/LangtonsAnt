@@ -1,0 +1,37 @@
+output=f
+size=240,240
+steps=12000
+delay=1
+ants=5
+
+# ant 1
+inipos1=10,10
+face1=W
+symbol1=X
+color1=red
+
+# ant 2
+inipos2=20,10
+face2=N
+symbol2=#
+color2=blue
+
+# ant 3
+inipos3=45,15
+face3=S
+symbol3=H
+color3=yellow
+
+# ant 4
+inipos4=200,200
+face4=E
+symbol4=B
+color4=magenta
+
+# ant 5
+inipos5=60,160
+face5=S
+symbol5=O
+color5=cyan
+
+# max 9 ants

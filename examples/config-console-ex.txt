@@ -1,0 +1,19 @@
+output=c
+size=40,40
+steps=300
+delay=20
+ants=2
+
+# ant 1
+inipos1=10,10
+face1=W
+symbol1=X
+color1=red
+
+# ant 2
+inipos2=20,10
+face2=N
+symbol2=#
+color2=blue
+
+# max 9 ants
