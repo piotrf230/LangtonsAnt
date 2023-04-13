@@ -1,68 +1,69 @@
-# Program: Symulacja zachowania mrówki Langtona
+*English description below*
+# Program: Symulacja zachowania mrÃ³wki Langtona
 
 ## Badane Zjawisko
-Mrówka Langtona to automat komórkowy dzia³aj¹cy wed³ug nastêpuj¹cych zasad:
-1. Mrówka porusza siê po planszy zmieniaj¹c stan komórek.
-2. Plansza ma okreœony wymiar, ale nie posiada krawêdzi - zapêtla siê.
-3. Gdy trafia na komórkê o stanie 0, nadaje jej okreœlony stan ró¿ny od 0, obraca siê w lewo i przenosi na kolejn¹ komórkê.
-4. Gdy trafia na komórkê o stanie ró¿nym od 0, nadaje zeruje j¹, obraca siê w prawo i przenosi na kolejn¹ komórkê.
+MrÃ³wka Langtona to automat komÃ³rkowy dziaÅ‚ajÄ…cy wedÅ‚ug nastÄ™pujÄ…cych zasad:
+1. MrÃ³wka porusza siÄ™ po planszy zmieniajÄ…c stan komÃ³rek.
+2. Plansza ma okreÅ›ony wymiar, ale nie posiada krawÄ™dzi - zapÄ™tla siÄ™.
+3. Gdy trafia na komÃ³rkÄ™ o stanie 0, nadaje jej okreÅ›lony stan rÃ³Å¼ny od 0, obraca siÄ™ w lewo i przenosi na kolejnÄ… komÃ³rkÄ™.
+4. Gdy trafia na komÃ³rkÄ™ o stanie rÃ³Å¼nym od 0, nadaje zeruje jÄ…, obraca siÄ™ w prawo i przenosi na kolejnÄ… komÃ³rkÄ™.
 
 ## Opis Programu
-Program ma na celu symulacjê zachowania mrówek Langtona na planszy, gdy¿ ich zachowanie mo¿e byæ trudne do przewidzenia przy wiêkszej iloœci kroków.
+Program ma na celu symulacjÄ™ zachowania mrÃ³wek Langtona na planszy, gdyÅ¼ ich zachowanie moÅ¼e byÄ‡ trudne do przewidzenia przy wiÄ™kszej iloÅ›ci krokÃ³w.
 
-### Przyk³adowe wyniki pracy programu
-![Przyk³adowy GIF](examples/out.gif) ![Przyk³adowy wynik konsoli](examples/console.png)
+### PrzykÅ‚adowe wyniki pracy programu
+![PrzykÅ‚adowy GIF](examples/out.gif) ![PrzykÅ‚adowy wynik konsoli](examples/console.png)
 
-### Wartoœci zwracane przez program
+### WartoÅ›ci zwracane przez program
 - 0, gdy wszystko wykonane jest poprawnie.
-- -1, gdy nast¹pi b³¹d otwarcia pliku config.txt.
-- -2, gdy wyst¹pi b³¹d alokacji pamiêci.
-- -3, gdy deklaracja mrówki wystêpuje przed iloœci¹ (pamiêæ jest niezaalokowana).
-- -4, gdy iloœæ mrówek nie zawiera siê w dozwolonym zakresie.
-- -5, gdy jedna z zadeklarowanych mrówek wychodzi swoim numerem poza zakres.
-- -6, gdy jedna z mrówek posiada niedozwolony symbol.
-- -7, gdy dane w pliku konfiguracyjnym s¹ niewystarczaj¹ce do uruchomienia symulacji.
-- -8, gdy nast¹pi b³¹d utworzenia pliku GIF.
+- -1, gdy nastÄ…pi bÅ‚Ä…d otwarcia pliku config.txt.
+- -2, gdy wystÄ…pi bÅ‚Ä…d alokacji pamiÄ™ci.
+- -3, gdy deklaracja mrÃ³wki wystÄ™puje przed iloÅ›ciÄ… (pamiÄ™Ä‡ jest niezaalokowana).
+- -4, gdy iloÅ›Ä‡ mrÃ³wek nie zawiera siÄ™ w dozwolonym zakresie.
+- -5, gdy jedna z zadeklarowanych mrÃ³wek wychodzi swoim numerem poza zakres.
+- -6, gdy jedna z mrÃ³wek posiada niedozwolony symbol.
+- -7, gdy dane w pliku konfiguracyjnym sÄ… niewystarczajÄ…ce do uruchomienia symulacji.
+- -8, gdy nastÄ…pi bÅ‚Ä…d utworzenia pliku GIF.
 
-Komunikaty o b³êdach oraz o wczytanych danych wysy³ane s¹ do strumienia b³êdów.
-Aby odczytaæ je podczas uruchamiania programu z wizualizacj¹ w konsoli, nale¿y przyk³adowo przekierowaæ ten strumieñ do pliku.  
-W systemie Linux mo¿na to zrobiæ przy pomocy nastêpuj¹cej komendy:  
+Komunikaty o bÅ‚Ä™dach oraz o wczytanych danych wysyÅ‚ane sÄ… do strumienia bÅ‚Ä™dÃ³w.
+Aby odczytaÄ‡ je podczas uruchamiania programu z wizualizacjÄ… w konsoli, naleÅ¼y przykÅ‚adowo przekierowaÄ‡ ten strumieÅ„ do pliku.  
+W systemie Linux moÅ¼na to zrobiÄ‡ przy pomocy nastÄ™pujÄ…cej komendy:  
 `./program 2> log.txt`
 
 ## Kompilacja
-Aby skompilowaæ program nale¿y do³¹czyæ biblioteki PF_cells.c oraz gifenc.c.  
-Przyk³adowa komenda do kompilacji przy pomocy kompilatora GCC:  
+Aby skompilowaÄ‡ program naleÅ¼y doÅ‚Ä…czyÄ‡ biblioteki PF_cells.c oraz gifenc.c.  
+PrzykÅ‚adowa komenda do kompilacji przy pomocy kompilatora GCC:  
 `gcc -Wall -Wextra main.c PF_cells.c gifenc.c -o program`
 
 ## Konfiguracja
-Program konfigurowany jest przez edycjê pliku config.txt, który powinien znajdowaæ siê w tym samym folderze, co program.
-### Sk³adnia
+Program konfigurowany jest przez edycjÄ™ pliku config.txt, ktÃ³ry powinien znajdowaÄ‡ siÄ™ w tym samym folderze, co program.
+### SkÅ‚adnia
 #### Zasady
-1. Nazwy parametrów musz¹ zaczynaæ siê od pocz¹tku linii, nie mo¿e przed nimi staæ ¿aden inny znak.
-2. Nazwê parametru od jego wartoœci oddziela znak '=', bez spacji przed ani po.
-3. Dla argumentów, które potrzebuj¹ wiêcej ni¿ jedn¹ wartoœæ, poszczególne wartoœæi oddzielane s¹ przecinkiem.
-4. Nierozpoznane argumenty s¹ ignorowane.
-5. Mo¿na umieszczaæ komentarze u¿ywaj¹c znaku '#' na pocz¹tku linii.
-6. Deklaracja parametru 'ants' musi wyst¹piæ przed jakimkolwiek parametrem mrówek.
+1. Nazwy parametrÃ³w muszÄ… zaczynaÄ‡ siÄ™ od poczÄ…tku linii, nie moÅ¼e przed nimi staÄ‡ Å¼aden inny znak.
+2. NazwÄ™ parametru od jego wartoÅ›ci oddziela znak '=', bez spacji przed ani po.
+3. Dla argumentÃ³w, ktÃ³re potrzebujÄ… wiÄ™cej niÅ¼ jednÄ… wartoÅ›Ä‡, poszczegÃ³lne wartoÅ›Ä‡i oddzielane sÄ… przecinkiem.
+4. Nierozpoznane argumenty sÄ… ignorowane.
+5. MoÅ¼na umieszczaÄ‡ komentarze uÅ¼ywajÄ…c znaku '#' na poczÄ…tku linii.
+6. Deklaracja parametru 'ants' musi wystÄ…piÄ‡ przed jakimkolwiek parametrem mrÃ³wek.
 #### Wzory
-1. [parametr globalny]=[wartoœæ]
-2. [parametr mrówki][nr mrówki]=[warrtoœæ]
+1. [parametr globalny]=[wartoÅ›Ä‡]
+2. [parametr mrÃ³wki][nr mrÃ³wki]=[warrtoÅ›Ä‡]
 3. #[komentarz]
 ## Parametry
 ### Globalne
-output=[c/f] - okreœla sposób przedstawienia dzia³ania, 'c' wyœwietla wynik w konsoli w czasie rzeczywistym, 'f' zapisuje do pliku we formacie GIF;  
-size=[szerokoœæ],[wysokoœæ] - okreœla rozmiar planszy w komórkach, 1 komórka <=> 1 symbol <=> 1 piksel, max 65,535 (wiêksze wartoœci zostan¹ odczytane nieprawid³owo);  
-steps=[iloœæ] - okreœla iloœæ kroków, które maj¹ zostaæ wykonane;  
-delay=[liczba ca³kowita] - okreœla czas wyœwietlania klatki w gifie, w setnych sekundy;
-ants=[iloœæ] - okreœla iloœæ mrówek, min 1, max 9;
-### Mrówki
-inipos[nr]=[szerokoœæ],[wysokoœæ] - okreœla pocz¹tkowe po³o¿enie mrówki na planszy;  
-face[nr]=[N/E/S/W] - okreœla pocz¹tkowy kierunek, w który mrówka jest zwrócona;  
-symbol[nr]=[symbol ASCII, widoczny(nie bia³y znak), nie '@' (symbol zarezerwowany dla pozycji mrówki)] - okreœla symbol pozostawiany przez mrówkê w reprezentacji w konsoli;  
-color[nr]=[red/green/blue/cyan/magenta/yellow] - okreœla kolor pozostawiany przez mrówkê w pliku GIF;
+output=[c/f] - okreÅ›la sposÃ³b przedstawienia dziaÅ‚ania, 'c' wyÅ›wietla wynik w konsoli w czasie rzeczywistym, 'f' zapisuje do pliku we formacie GIF;  
+size=[szerokoÅ›Ä‡],[wysokoÅ›Ä‡] - okreÅ›la rozmiar planszy w komÃ³rkach, 1 komÃ³rka <=> 1 symbol <=> 1 piksel, max 65,535 (wiÄ™ksze wartoÅ›ci zostanÄ… odczytane nieprawidÅ‚owo);  
+steps=[iloÅ›Ä‡] - okreÅ›la iloÅ›Ä‡ krokÃ³w, ktÃ³re majÄ… zostaÄ‡ wykonane;  
+delay=[liczba caÅ‚kowita] - okreÅ›la czas wyÅ›wietlania klatki w gifie, w setnych sekundy;
+ants=[iloÅ›Ä‡] - okreÅ›la iloÅ›Ä‡ mrÃ³wek, min 1, max 9;
+### MrÃ³wki
+inipos[nr]=[szerokoÅ›Ä‡],[wysokoÅ›Ä‡] - okreÅ›la poczÄ…tkowe poÅ‚oÅ¼enie mrÃ³wki na planszy;  
+face[nr]=[N/E/S/W] - okreÅ›la poczÄ…tkowy kierunek, w ktÃ³ry mrÃ³wka jest zwrÃ³cona;  
+symbol[nr]=[symbol ASCII, widoczny(nie biaÅ‚y znak), nie '@' (symbol zarezerwowany dla pozycji mrÃ³wki)] - okreÅ›la symbol pozostawiany przez mrÃ³wkÄ™ w reprezentacji w konsoli;  
+color[nr]=[red/green/blue/cyan/magenta/yellow] - okreÅ›la kolor pozostawiany przez mrÃ³wkÄ™ w pliku GIF;
 
-## U¿yte biblioteki:
+## UÅ¼yte biblioteki:
 GIF encoder - open source  
 https://github.com/lecram/gifenc  
   
-PF Cells - Stworzona przeze mnie na potrzeby projektu w celu poprawienia przejrzystoœci kodu.  
+PF Cells - Stworzona przeze mnie na potrzeby projektu w celu poprawienia przejrzystoÅ›ci kodu.  
