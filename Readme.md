@@ -33,7 +33,7 @@ W systemie Linux można to zrobić przy pomocy następującej komendy:
 ## Kompilacja
 Aby skompilować program należy dołączyć biblioteki PF_cells.c oraz gifenc.c.  
 Przykładowa komenda do kompilacji przy pomocy kompilatora GCC:  
-`gcc -Wall -Wextra main.c PF_cells.c gifenc.c -o program`
+`gcc main.c PF_cells.c gifenc.c -o program`
 
 ## Konfiguracja
 Program konfigurowany jest przez edycję pliku config.txt, który powinien znajdować się w tym samym folderze, co program.
@@ -66,4 +66,71 @@ color[nr]=[red/green/blue/cyan/magenta/yellow] - określa kolor pozostawiany prz
 GIF encoder - open source  
 https://github.com/lecram/gifenc  
   
-PF Cells - Stworzona przeze mnie na potrzeby projektu w celu poprawienia przejrzystości kodu.  
+PF Cells - Stworzona przeze mnie na potrzeby projektu w celu poprawienia przejrzystości kodu. 
+
+# Langton's Ant Simulation
+
+## Simulated system
+Langton's ant is a Cellular automaton operating according to the following rules:
+1. The Ant moves on the board, changing the state of cells.
+2. The board has defined size, but loops on the edges.
+3. If the ant stands on a cell with 0 state, it sets the state value to a value different than 0, turns left and moves forward.
+4. If the and stands on a cell with a state different than 0, it sets it's value to zero, turns right and moves forward.
+
+## Program description
+Program simulates the behaviour of Langton's ants on a board, because their behaviour may be hard to predict after many steps.
+
+### Output Example
+![GIF Output Example](examples/out.gif) ![Console Output Example](examples/console.png)
+
+### Return values
+- 0 - Everything executed correctly
+- -1 - "config.txt" file open error.
+- -2 - memory allocation error.
+- -3 - ant declared before ant count.
+- -4 - invalid ant count.
+- -5 - ant number out of bounds.
+- -6 - and symbol invalid.
+- -7 - insufficient config data.
+- -8 - GIF file creation error.
+
+Error and loading messeges are sent to error stream. Saving this stream in a file, could be achieved by starting the program by following command (In Linux console):  
+`./program 2> log.txt`
+
+## Compilation
+To compile the program one should add the needed libraries.
+Example command to compile using gcc on Linux:  
+`gcc main.c PF_cells.c gifenc.c -o program`
+
+## Configuration
+Configuration is done by editing the "config.txt" file. The file must be located in the same directory as the executable program.
+### Syntax
+#### Rules
+1. Parameters should start at the very beggining of the line, with no characters before them.
+2. Parameter name is divided from it's value by a '=' symbol, without any whitespaces between them.
+3. For parameters taking multiple values, the values are separated by commas.
+4. Unidentified arguments are ignored.
+5. Comments are created by starting a line with '#' symbol.
+6. "ants" parameter must be declared before any ant declaration.
+#### Patterns
+1. [global parameter]=[value]
+2. [ant parameter][ant number]=[value]
+3. #[comment]
+## Parametry
+### Globalne
+output=[c/f] - defines output view, 'c' - real time console view, 'f' - save to GIF file;  
+size=[width],[heigh] - defines board size in cells, 1 cell <=> 1 symbol <=> 1 pixel, max 65,535 (greater values will be read incorrectly);  
+steps=[count] - defines step count;  
+delay=[integer] - defines the time between frames in GIF, in 1/100 seconds;
+ants=[count] - defines the number of ants, minimum of 1, maximum 9;
+### Mrówki
+inipos[number]=[width],[heigh] - defines the starting point of certain ant on board;  
+face[number]=[N/E/S/W] - defines ant't starting direction;  
+symbol[number]=[ASCII symbol, not whitespace, not '@' (symbol reserved for ants' current positions)] - defines symbol set by ant in console representation;  
+color[number]=[red/green/blue/cyan/magenta/yellow] - defines ant set pixel color in GIF file;
+
+## Used Libraries:
+GIF encoder - open source  
+https://github.com/lecram/gifenc  
+  
+PF Cells - Made by me for this project.  
